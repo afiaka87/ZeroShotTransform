@@ -66,16 +66,17 @@ transform_lookup = {
 }
 transform_keys = ["solarized", "sharpen", "blur", "color_jitter", "grayscale", "horizontal_flip", "vertical_flip"]
 
-def zero_shot_transform(image, caption="", p=0.5, transform_to_apply="solarized"):
+def zero_shot_transform(image, caption, p=0.5, transform_to_apply="solarized"):
     """
     Output PIL.Image of a two-panel style transfer image with an english word describing the transform included in the caption.
     See OpenAI DALL-E blog post for more details:
     The top half of the image is the original image, and the bottom half is a stylized image.
     """
-    assert len(caption) > 0, "Zero-shot transform must have a caption."
-    image_transform = torchvision.transforms.RandomApply(transform_lookup[transform_to_apply], p=p)
-    friendly_transform = transform_to_apply.replace("_", " ")
-    pil_image = two_panel_style_transfer(image, img_transform=image_transform, resize_ratio=0.6)
-    return pil_image, f"Two panel image of the exact same picture." + \
-            "On the top {caption} and on the bottom the same image but with {friendly_transform} applied." + \
-            "The original image is on the top and the {friendly_transform} image on the bottom. The caption is {caption}."
+    if p >= 0.5:
+        friendly_transform = transform_to_apply.replace("_", " ")
+        style_caption = "Two panel image of the exact same picture." + \
+            f"On the top {caption} and on the bottom the same image but with {friendly_transform} applied." + \
+            f"The original image is on the top and the {friendly_transform} image on the bottom. The caption is {caption}."
+        style_image_transform = transform_lookup[transform_to_apply]
+        return two_panel_style_transfer(image, img_transform=style_image_transform, resize_ratio=1.0), style_caption
+    return image, style_caption
