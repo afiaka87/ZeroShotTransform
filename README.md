@@ -39,10 +39,11 @@ image, caption = zero_shot_transform(
 ```
 
 `image`
+
 <img width="208" alt="Screen Shot 2021-07-19 at 8 25 12 AM" src="https://user-images.githubusercontent.com/3994972/126166845-11a7ce50-c9eb-44aa-81da-0b451cc1363b.png">
 
 
-`caption` - format string used for caption transform.
+`caption` (format string used for caption transform)
 ```python
 caption = f"Two panel image of the exact same picture." + \
   "On the top {caption} and on the bottom the same image but with {transform_name} applied." + \
