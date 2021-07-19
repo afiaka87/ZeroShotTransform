@@ -24,8 +24,8 @@ Supported Transform by Name
   - `blur`
   - `color_jitter`
   - `grayscale`
-  - horizontal_flip
-  - vertical_flip
+  - `horizontal_flip`
+  - `vertical_flip`
 
 Running 
 ```python
