@@ -1,5 +1,7 @@
 # ZeroShotTransform
 
+Work In Progress.
+
 Transforms for captioned images.
 
 For now, will include two useful examples I use for training DALLE-pytorch.
