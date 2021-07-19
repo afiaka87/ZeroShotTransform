@@ -25,7 +25,7 @@ image, caption = zero_shot_transform(
 Two panel image of the exact same picture.
 On the top an image of a cat and on the bottom the same image but with grayscale applied.
 The original image is on the top and the grayscale image on the bottom.
-The caption is "an image of a cat.
+The caption is "an image of a cat."
 ```
 
 For now, will include two useful examples I use for training DALLE-pytorch.
