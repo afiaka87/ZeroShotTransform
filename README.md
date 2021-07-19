@@ -4,8 +4,8 @@ Transforms for captioned images.
 
 For now, will include two useful examples I use for training DALLE-pytorch.
 I'm interested in kickstarting the learning for zero shot style transfer 
-by training with transforms that encourage the zero shot text abilities shown off
-in the DALL-E paper/blog post.
+by training with transforms that encourage the zero shot style transfer 
+text-image abilities shown off in the DALL-E paper/blog post.
 
 # Two Panel Style Transfer
  ```python
