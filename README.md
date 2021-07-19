@@ -10,13 +10,6 @@ by training with transforms that encourage the zero shot style transfer
 text-image abilities shown off in the DALL-E paper/blog post.
 
 ## Two Panel Style Transfer
- ```python
-from zero_shot_transform.transforms import zero_shot_transform
-
-# Load an image with PIL
-image_file = pathlib.Path("path/to/valid/image.(png|jpg)")
-pil_image = PIL.Image.open(image_file)
-```
 
 Supported Transform by Name
   - `solarized`
@@ -29,6 +22,11 @@ Supported Transform by Name
 
 Running 
 ```python
+from pathlib import Path
+from zero_shot_transform.transforms import zero_shot_transform
+from PIL import Image
+
+image = Image.open(Path("path/to/valid/image.(png|jpg)"))
 caption = "Some lengthy caption from COCO or another image-text dataset."
 image, caption = zero_shot_transform(
    image,
